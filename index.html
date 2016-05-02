@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>AutoCardLink</title>
+	<style>
+		body
+		{
+			max-width: 1024px;
+			margin: 20px auto;
+		}
+
+		li
+		{
+			list-style: none;
+		}
+
+		p
+		, blockquote
+		{
+			margin: 10px 20px;
+		}
+
+		blockquote
+		{
+			border: 1px gray dotted;
+		}
+
+		.auto-card-link-decoration-off a.auto-card-link
+		{
+			text-decoration: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<h1>AutoCardLink</h1>
+
+	<p>　カード名辞書の6タイプすべてに対応しています。</p>
+
+	<ul>
+		<li>《潮の星、京河/Keiga, the Tide Star》</li>
+		<li>《潮の星、京河》</li>
+		<li>《Keiga, the Tide Star》</li>
+		<li>《潮の星、京河/Keiga, the Tide Star(CHK)》</li>
+		<li>《潮の星、京河(CHK)》</li>
+		<li>《Keiga, the Tide Star(CHK)》</li>
+	</ul>
+
+	<p>　文章中に複数のカードがあってもそれぞれにリンクが貼られます。元から&lt;a&gt;タグ内にカード名があった場合、元のリンクが優先され、カードリンクは貼られません。</p>
+
+	<blockquote><p>　しかし、《悪斬の天使/Baneslayer Angel》が登場したことで、《セラの天使/Serra Angel》はアンコモンに格下げになった。最近では<a href="">《大天使アヴァシン/Archangel Avacyn》という怪物</a>まで現れている。</p></blockquote>
+
+	<p>　分割カード、反転カード、両面カードいずれにも対応しています。</p>
+
+	<ul>
+		<li>《火+氷/Fire+Ice》</li>
+		<li>《火+氷/Fire/Ice》</li>
+		<li>《上位の空民、エラヨウ/Erayo, Soratami Ascendant》</li>
+		<li>《エラヨウの本質/Erayo's Essence》</li>
+		<li>《ヴリンの神童、ジェイス/Jace, Vryn's Prodigy》</li>
+		<li>《束縛なきテレパス、ジェイス/Jace, Telepath Unbound》</li>
+	</ul>
+
+	<p>　アングルード、アンヒンジドのカードにも対応しています……が、確認漏れがあるかもしれません。また、非公式の日本語訳には対応していません。</p>
+
+
+	<ul>
+		<li>《_____》</li>
+		<li>《Who+What+When+Where+Why》</li>
+		<li>《"Ach! Hans, Run!"》</li>
+		<li>《Our Market Research Shows That Players Like Really Long Card Names So We Made this Card to Have the Absolute Longest Card Name Ever Elemental》</li>
+		<li>《Circle of Protection: Art》</li>
+		<li>《Erase (Not the Urza's Legacy One)》</li>
+		<li>《B.F.M. (Big Furry Monster)》</li>
+	</ul>
+
+	<p>　リンクタグには“auto-card-link”というクラスが付加されるので、CSSを使って、自動リンクの際はテキストデコレーションをオフにするといったことも可能です。以下はその例です。</p>
+
+	<ul class="auto-card-link-decoration-off">
+		<li>《潮の星、京河/Keiga, the Tide Star》</li>
+		<li>《潮の星、京河》</li>
+		<li>《Keiga, the Tide Star》</li>
+		<li>《潮の星、京河/Keiga, the Tide Star(CHK)》</li>
+		<li>《潮の星、京河(CHK)》</li>
+		<li>《Keiga, the Tide Star(CHK)》</li>
+	</ul>
+
+	<p>　指摘点などがありましたら、<a href="https://twitter.com/keiga_jp" target="_blank">Twitter</a>までお願いします。</p>
+
+	<script src="AutoCardLink.js" type="text/javascript"></script>
+
+</body>
+</html>
