@@ -24,3 +24,24 @@ blockquote
 {
 	text-decoration: none;
 }
+
+.text-center
+{
+	text-align: center;
+}
+
+a.btn
+{
+	display: inline-block;
+	font-size: 20px;
+	text-align: center;
+	border-style: solid;
+	border-color: blue;
+	border-width: 1px;
+	border-radius: 3px;
+	padding: 3px;
+	background: blue;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
