@@ -27,6 +27,7 @@
 function ReplaceCardLink(cardText)
 {
 	var cardInner = cardText.replace(/《(.+?)》/, "$1");
+	log(cardInner);
 	var cardUrlBody;
 	if (cardInner.match(/\//))
 	{
