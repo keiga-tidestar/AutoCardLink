@@ -15,11 +15,11 @@ function checkMatch(match, p1, p2, offset, string) {
 		// 2番目にマッチしたら置換を行なわずそのまま返す
 		return p2;
 	} else if (p1) {
-		return ReplaceCardLink(p1);
+		return replaceCardLink(p1);
 	}
 }
 
-function ReplaceCardLink(cardText) {
+function replaceCardLink(cardText) {
 	var cardInner = cardText.replace(/《(.+?)》/, "$1");
 	log(cardInner);
 	var cardUrlBody;
