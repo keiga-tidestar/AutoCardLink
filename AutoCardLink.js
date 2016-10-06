@@ -3,42 +3,30 @@
 
 "use strict";
 
-(function()
-{
+(function() {
 	var text = document.body.innerHTML;
 	var regExp = /(《.+?》)|(<a.*?>.*?<\/a>)/g;
-	text = text.replace(regExp,
-	function()
-	{
-		if (arguments[2])
-		{
+	text = text.replace(regExp, function() {
+		if (arguments[2]) {
 			// 2番目にマッチしたら置換を行なわずそのまま返す
 			return arguments[2];
-		}
-		else
-		if (arguments[1])
-		{
+		} else if (arguments[1]) {
 			return ReplaceCardLink(arguments[1]);
 		}
 	});
 	document.body.innerHTML = text;
-})()
+})();
 
-function ReplaceCardLink(cardText)
-{
+function ReplaceCardLink(cardText) {
 	var cardInner = cardText.replace(/《(.+?)》/, "$1");
 	log(cardInner);
 	var cardUrlBody;
-	if (cardInner.match(/\//))
-	{
+	if (cardInner.match(/\//)) {
 		var regExp = /([^\/]+)\/.*/;
 		cardUrlBody = cardInner.replace(regExp, "$1");
-	}
-	else
-	{
+	} else {
 		var regExp = /(.+)\(\w{2,3}\)/;
-		if (cardInner.match(regExp))
-		{
+		if (cardInner.match(regExp)) {
 			cardInner = cardInner.replace(regExp, "$1");
 		}
 		cardUrlBody = cardInner;
