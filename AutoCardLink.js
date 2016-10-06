@@ -27,6 +27,7 @@
 function ReplaceCardLink(cardText)
 {
 	var cardInner = cardText.replace(/《(.+?)》/, "$1");
+	log(cardInner);
 	var cardUrlBody;
 	if (cardInner.match(/\//))
 	{
@@ -47,4 +48,8 @@ function ReplaceCardLink(cardText)
 	var cardUrl = "http://whisper.wisdom-guild.net/card/" + cardUrlBody;
 	var replaceText = '<a href="' + cardUrl + '" target="_blank" class="auto-card-link">' + cardText + '</a>';
 	return replaceText;
+}
+
+function log(str) {
+	console.log(str);
 }
