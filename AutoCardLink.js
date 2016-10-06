@@ -19,8 +19,7 @@ function checkMatch(match, p1, p2, offset, string) {
 	}
 }
 
-function ReplaceCardLink(cardText)
-{
+function ReplaceCardLink(cardText) {
 	var cardInner = cardText.replace(/《(.+?)》/, "$1");
 	log(cardInner);
 	var cardUrlBody;
