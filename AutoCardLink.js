@@ -6,16 +6,18 @@
 (function() {
 	var text = document.body.innerHTML;
 	var regExp = /(《.+?》)|(<a.*?>.*?<\/a>)/g;
-	text = text.replace(regExp, function() {
-		if (arguments[2]) {
-			// 2番目にマッチしたら置換を行なわずそのまま返す
-			return arguments[2];
-		} else if (arguments[1]) {
-			return ReplaceCardLink(arguments[1]);
-		}
-	});
+	text = text.replace(regExp, checkMatch);
 	document.body.innerHTML = text;
 })();
+
+function checkMatch(match, p1, p2, offset, string) {
+	if (p2) {
+		// 2番目にマッチしたら置換を行なわずそのまま返す
+		return p2;
+	} else if (p1) {
+		return ReplaceCardLink(p1);
+	}
+}
 
 function ReplaceCardLink(cardText) {
 	var cardInner = cardText.replace(/《(.+?)》/, "$1");
